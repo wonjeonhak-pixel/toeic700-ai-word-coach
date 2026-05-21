@@ -1,15 +1,16 @@
 :root {
-  --bg: #f6f7f8;
-  --bg-soft: #f1f2f4;
+  --bg: #f5f3ee;
+  --bg-soft: #efece5;
   --card: #ffffff;
-  --card-soft: #f3f4f6;
+  --card-soft: #f8fafc;
+  --accent-soft: #e8f0ff;
   --text: #111827;
   --text-sub: #6b7280;
   --accent: #2563eb;
   --accent-strong: #1d4ed8;
   --correct: #059669;
   --incorrect: #dc2626;
-  --border: #e5e7eb;
+  --border: #e2e8f0;
 }
 
 * {
@@ -65,13 +66,15 @@ button {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 22px;
-  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.03),
-    0 1px 8px rgba(17, 24, 39, 0.025);
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04),
+    0 1px 12px rgba(17, 24, 39, 0.03);
 }
 
 .focus-card {
-  background: linear-gradient(135deg, #eef2ff 0%, #f5f7ff 100%);
-  border: 1px solid #dbe2ff;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, #f3f6ff 100%);
+  border: 1px solid #c7d2fe;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.04),
+    0 4px 16px rgba(37, 99, 235, 0.06);
 }
 
 .focus-label {
@@ -104,14 +107,16 @@ button {
   font-weight: 600;
   border: none;
   border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.18);
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.15),
+    0 2px 8px rgba(37, 99, 235, 0.08);
   transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
   letter-spacing: 0.01em;
 }
 
 .primary-btn:hover {
   background: var(--accent-strong);
-  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.22);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.18),
+    0 4px 14px rgba(37, 99, 235, 0.12);
 }
 
 .primary-btn:active {
@@ -220,14 +225,14 @@ button {
 }
 
 .choice-btn.correct {
-  background: rgba(5, 150, 105, 0.08);
-  border-color: var(--correct);
+  background: rgba(5, 150, 105, 0.06);
+  border-color: rgba(5, 150, 105, 0.55);
   color: #065f46;
 }
 
 .choice-btn.incorrect {
-  background: rgba(220, 38, 38, 0.06);
-  border-color: var(--incorrect);
+  background: rgba(220, 38, 38, 0.05);
+  border-color: rgba(220, 38, 38, 0.5);
   color: #991b1b;
 }
 
@@ -244,18 +249,18 @@ button {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.03),
-    0 1px 8px rgba(17, 24, 39, 0.025);
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04),
+    0 1px 12px rgba(17, 24, 39, 0.03);
 }
 
 .feedback-card.correct {
-  border-color: rgba(5, 150, 105, 0.45);
-  background: linear-gradient(180deg, rgba(5, 150, 105, 0.04) 0%, #ffffff 100%);
+  border-color: rgba(5, 150, 105, 0.3);
+  background: linear-gradient(180deg, rgba(5, 150, 105, 0.025) 0%, #ffffff 100%);
 }
 
 .feedback-card.incorrect {
-  border-color: rgba(220, 38, 38, 0.4);
-  background: linear-gradient(180deg, rgba(220, 38, 38, 0.04) 0%, #ffffff 100%);
+  border-color: rgba(220, 38, 38, 0.28);
+  background: linear-gradient(180deg, rgba(220, 38, 38, 0.025) 0%, #ffffff 100%);
 }
 
 .feedback-title {
@@ -342,13 +347,14 @@ button {
 }
 
 .learner-type-card {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(37, 99, 235, 0.02) 100%);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: var(--accent-soft);
+  border: 1px solid rgba(37, 99, 235, 0.22);
   border-radius: 14px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
 }
 
 .learner-type-label {
@@ -557,9 +563,9 @@ button {
   top: -16px;
   background: linear-gradient(
     180deg,
-    rgba(246, 247, 248, 0) 0%,
-    rgba(246, 247, 248, 0.85) 40%,
-    rgba(246, 247, 248, 1) 100%
+    rgba(245, 243, 238, 0) 0%,
+    rgba(245, 243, 238, 0.85) 40%,
+    rgba(245, 243, 238, 1) 100%
   );
   z-index: -1;
   pointer-events: none;
