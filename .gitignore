@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.env
+.env.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# competition source materials (not used by app)
+data/*.xlsx
+data/*.pdf
+
+# test artifacts
+scripts/test-output.json
