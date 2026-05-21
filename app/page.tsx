@@ -15,7 +15,7 @@ export default function Home() {
         <div className="focus-title">TOEIC600 → 700帯</div>
         <p className="focus-note">
           メール・会議・報告で頻出のビジネス語彙を10問×1セッションで定着。
-          「なぜ間違えたか」をAIが分析し、次の1問が前進に変わります。
+          単語を「思い出す」から「すぐ分かる」へ。
         </p>
       </div>
 
