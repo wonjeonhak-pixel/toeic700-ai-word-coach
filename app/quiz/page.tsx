@@ -29,7 +29,9 @@ export default function QuizPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [feedback, setFeedback] = useState<FeedbackResponse | null>(null);
   const [loading, setLoading] = useState(false);
+  const [elapsedSec, setElapsedSec] = useState<number | null>(null);
   const recordsRef = useRef<AnswerRecord[]>([]);
+  const questionStartRef = useRef<number | null>(null);
 
   const current = questions[index];
 
@@ -37,10 +39,15 @@ export default function QuizPage() {
     setSelectedIndex(null);
     setFeedback(null);
     setPhase("answering");
+    setElapsedSec(null);
+    questionStartRef.current = performance.now();
   }, [index]);
 
   async function handleSelect(choiceIdx: number) {
     if (phase !== "answering") return;
+    if (questionStartRef.current !== null) {
+      setElapsedSec((performance.now() - questionStartRef.current) / 1000);
+    }
     setSelectedIndex(choiceIdx);
     setPhase("feedback");
     setLoading(true);
@@ -218,7 +225,12 @@ export default function QuizPage() {
       </div>
 
       {phase === "feedback" && (
-        <FeedbackPanel key={index} loading={loading} feedback={feedback} />
+        <FeedbackPanel
+          key={index}
+          loading={loading}
+          feedback={feedback}
+          elapsedSec={elapsedSec}
+        />
       )}
 
       {phase === "feedback" && (
@@ -235,16 +247,26 @@ export default function QuizPage() {
 function FeedbackPanel({
   loading,
   feedback,
+  elapsedSec,
 }: {
   loading: boolean;
   feedback: FeedbackResponse | null;
+  elapsedSec: number | null;
 }) {
   const [showExample, setShowExample] = useState(false);
+
+  const elapsedLine =
+    elapsedSec !== null ? (
+      <div className="feedback-elapsed">
+        意味が浮かぶまで：{elapsedSec.toFixed(1)}秒
+      </div>
+    ) : null;
 
   if (loading) {
     return (
       <div className="feedback-card">
         <AnalyzingIndicator messages={FEEDBACK_LOADING_MESSAGES} />
+        {elapsedLine}
       </div>
     );
   }
@@ -254,6 +276,7 @@ function FeedbackPanel({
         <div className="feedback-body">
           フィードバックの取得に失敗しました。次へ進みましょう。
         </div>
+        {elapsedLine}
       </div>
     );
   }
@@ -282,6 +305,7 @@ function FeedbackPanel({
             例文を見る
           </button>
         )}
+        {elapsedLine}
       </div>
     );
   }
@@ -308,6 +332,7 @@ function FeedbackPanel({
         <div className="label">コーチから</div>
         <div className="value">{feedback.encouragement}</div>
       </div>
+      {elapsedLine}
     </div>
   );
 }

@@ -305,6 +305,14 @@ button {
   line-height: 1.65;
 }
 
+.feedback-elapsed {
+  font-size: 11px;
+  color: var(--text-sub);
+  letter-spacing: 0.04em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .feedback-example .en {
   color: var(--text);
 }
