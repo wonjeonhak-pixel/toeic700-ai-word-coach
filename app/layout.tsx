@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TOEIC700 AI英単語コーチ",
-  description: "なぜ間違えたかが分かる、社会人向けTOEIC700英単語コーチ",
+  title: "QuietStep — TOEIC700 AI英単語コーチ",
+  description:
+    "QuietStep｜なぜ間違えたかが分かる、社会人向けTOEIC700英単語コーチ",
 };
 
 export const viewport: Viewport = {

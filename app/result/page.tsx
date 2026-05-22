@@ -203,6 +203,8 @@ export default function ResultPage() {
       <Link href="/" prefetch={false} style={{ textDecoration: "none" }}>
         <button className="ghost-btn">ホームに戻る</button>
       </Link>
+
+      <div className="signature">QuietStep</div>
     </>
   );
 }

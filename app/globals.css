@@ -61,6 +61,24 @@ button {
   color: var(--text-sub);
 }
 
+.wordmark {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+
+.signature {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--text-sub);
+  opacity: 0.55;
+  padding: 4px 0 0;
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);

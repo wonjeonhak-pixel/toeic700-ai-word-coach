@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <>
       <header className="header">
+        <div className="wordmark">QuietStep</div>
         <h1>TOEIC700 AI英単語コーチ</h1>
         <span className="sub">今日の10問だけ、静かに前進</span>
       </header>
