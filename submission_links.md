@@ -9,7 +9,7 @@
 | # | 種別 | URL | 備考 |
 |---|---|---|---|
 | 1 | **GitHub Repository** | https://github.com/wonjeonhak-pixel/toeic700-ai-word-coach | 本プロジェクトのソース一式・コミット履歴・specs |
-| 2 | **Vercel Production URL** | <!-- TODO: 発行された Vercel URL を貼る（例: https://quietstep.vercel.app または https://toeic700-ai-word-coach.vercel.app） --> | 本番デプロイ。提出前にハードリロードで最新コミット反映を確認 |
+| 2 | **Vercel Production URL** | https://toeic700-ai-word-coach.vercel.app | 本番デプロイ。提出前にハードリロードで最新コミット反映を確認 |
 | 3 | **制作メモ** | [`making_note.md`](./making_note.md) | TOEIC学習思想 / quiet UX 採用理由 / AI 共創プロセス |
 | 4 | **Demo Video**（optional） | <!-- TODO: 録画する場合のみ追記。例: YouTube limited / Loom 共有リンク --> | 任意。1〜2 分の操作動画があれば提出フォームに添付 |
 
@@ -25,14 +25,14 @@
 | 設計 | [`specs/backlog.md`](./specs/backlog.md) | AI-DLC 実装タスク（全完了） |
 | AI | [`submission_prompts.md`](./submission_prompts.md) | Claude API プロンプト全文と設計意図 |
 | 思想 | [`making_note.md`](./making_note.md) | TOEIC学習思想と quiet UX 採用の制作メモ |
-| 画像 | [`docs/screenshots/`](./docs/screenshots/) | 提出用スクリーンショット（後で追加） |
+| 画像 | [`docs/screenshots/`](./docs/screenshots/) | 提出用スクリーンショット 6 枚（home / quiz / feedback / result_summary / focus_words / result_footer） |
 
 ---
 
 ## 提出前最終チェック
 
-- [ ] `main` ブランチが最新コミットを GitHub に push 済み
-- [ ] Vercel 本番デプロイが最新コミットで Ready
-- [ ] Vercel Production URL を本ファイル `#2` の TODO に転記
-- [ ] `docs/screenshots/` に 5 枚（home / quiz / feedback / learner_type / result）配置
+- [x] `main` ブランチが最新コミットを GitHub に push 済み
+- [x] Vercel 本番デプロイが最新コミットで Ready
+- [x] Vercel Production URL を本ファイル `#2` に記載
+- [x] `docs/screenshots/` に 6 枚配置（01_home / 02_quiz / 03_feedback / 04_result_summary / 05_focus_words / 06_result_footer）
 - [ ] 本ファイルの「提出 URL」表を提出フォームへ転記
