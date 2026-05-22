@@ -421,4 +421,4 @@ node scripts/run-quiz-test.mjs
 
 ## ライセンス / 利用条件
 
-本リポジトリは社内コンペ提出用の MVP 実装です。支給JSON（`data/toeic_wordlist.json`）の二次利用については主催者のガイドラインに従ってください。
+本リポジトリはコンペ提出用の MVP 実装です。支給JSON（`data/toeic_wordlist.json`）の二次利用については主催者のガイドラインに従ってください。
