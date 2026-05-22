@@ -458,6 +458,12 @@ button {
   text-transform: none;
 }
 
+.summary-section h3.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .summary-section p {
   margin: 0;
   font-size: 15px;

@@ -131,7 +131,23 @@ export default function ResultPage() {
             </div>
             {reviews.some((r) => !r.isCorrect) && (
               <div className="summary-section">
-                <h3>次回の重点単語</h3>
+                <h3 className="with-icon">
+                  <svg
+                    className="focus-icon"
+                    viewBox="0 0 20 20"
+                    width="13"
+                    height="13"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 3h10v13l-5-3-5 3z" />
+                  </svg>
+                  次回の重点単語
+                </h3>
                 <div className="focus-words">
                   {reviews
                     .filter((r) => !r.isCorrect)
