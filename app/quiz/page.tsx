@@ -198,7 +198,7 @@ export default function QuizPage() {
           <span>
             {index + 1} / {questions.length}
           </span>
-          <span>TOEIC600→700帯</span>
+          <span>TOEIC600→700レベル</span>
         </div>
       </header>
 

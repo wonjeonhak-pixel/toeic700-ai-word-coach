@@ -6,7 +6,7 @@
 
 ## スコープ
 
-社会人向け、TOEIC700帯のビジネス英単語を **1セッション10問** で学習するWebアプリ。Next.js + Claude API + Vercel デプロイの構成で MVP を完成させる。
+社会人向け、TOEIC700レベルのビジネス英単語を **1セッション10問** で学習するWebアプリ。Next.js + Claude API + Vercel デプロイの構成で MVP を完成させる。
 
 ---
 
