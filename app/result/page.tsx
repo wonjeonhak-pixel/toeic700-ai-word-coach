@@ -25,6 +25,7 @@ export default function ResultPage() {
   const [stats, setStats] = useState<{ correct: number; total: number } | null>(
     null
   );
+  const [avgElapsed, setAvgElapsed] = useState<number | null>(null);
 
   useEffect(() => {
     const inputRaw = sessionStorage.getItem("toeic700:summaryInput");
@@ -44,6 +45,21 @@ export default function ResultPage() {
     if (reviewsRaw) {
       try {
         setReviews(JSON.parse(reviewsRaw) as ReviewItem[]);
+      } catch {
+        // ignore
+      }
+    }
+    const elapsedRaw = sessionStorage.getItem("toeic700:elapsedTimes");
+    if (elapsedRaw) {
+      try {
+        const arr = JSON.parse(elapsedRaw) as number[];
+        if (Array.isArray(arr) && arr.length > 0) {
+          const valid = arr.filter((n) => typeof n === "number" && isFinite(n));
+          if (valid.length > 0) {
+            const avg = valid.reduce((a, b) => a + b, 0) / valid.length;
+            setAvgElapsed(avg);
+          }
+        }
       } catch {
         // ignore
       }
@@ -79,6 +95,11 @@ export default function ResultPage() {
             <span className="big">{stats.correct}</span>
             <span className="small">/ {stats.total} 問</span>
           </div>
+          {avgElapsed !== null && (
+            <div className="avg-elapsed">
+              平均理解時間：{avgElapsed.toFixed(1)}秒
+            </div>
+          )}
         </div>
       )}
 

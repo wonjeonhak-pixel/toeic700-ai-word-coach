@@ -78,10 +78,18 @@ button {
 }
 
 .focus-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.08em;
   font-weight: 600;
+}
+
+.focus-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .focus-title {
@@ -207,9 +215,12 @@ button {
 }
 
 .choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-align: left;
-  padding: 16px 18px;
-  background: var(--card);
+  padding: 14px 16px;
+  background: rgba(37, 99, 235, 0.03);
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -219,9 +230,30 @@ button {
     box-shadow 0.15s ease;
 }
 
+.choice-letter {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.choice-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .choice-btn:hover {
-  background: var(--card-soft);
-  border-color: #d1d5db;
+  background: rgba(37, 99, 235, 0.06);
+  border-color: #c7d2fe;
 }
 
 .choice-btn.correct {
@@ -230,14 +262,24 @@ button {
   color: #065f46;
 }
 
+.choice-btn.correct .choice-letter {
+  background: rgba(5, 150, 105, 0.14);
+  color: var(--correct);
+}
+
 .choice-btn.incorrect {
   background: rgba(220, 38, 38, 0.05);
   border-color: rgba(220, 38, 38, 0.5);
   color: #991b1b;
 }
 
+.choice-btn.incorrect .choice-letter {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--incorrect);
+}
+
 .choice-btn.disabled {
-  opacity: 0.7;
+  opacity: 0.78;
   cursor: default;
 }
 
@@ -344,6 +386,14 @@ button {
 .summary-stats .small {
   font-size: 14px;
   color: var(--text-sub);
+}
+
+.avg-elapsed {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-sub);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .learner-type-card {

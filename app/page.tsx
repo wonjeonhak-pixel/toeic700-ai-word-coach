@@ -11,8 +11,25 @@ export default function Home() {
       </header>
 
       <div className="card focus-card">
-        <div className="focus-label">現在の重点</div>
-        <div className="focus-title">TOEIC600 → 700帯</div>
+        <div className="focus-label">
+          <svg
+            className="focus-icon"
+            viewBox="0 0 20 20"
+            width="13"
+            height="13"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 4.5c2-0.6 4.5-0.6 7 0.8v11.2c-2.5-1.4-5-1.4-7-0.8v-11.2z" />
+            <path d="M17 4.5c-2-0.6-4.5-0.6-7 0.8v11.2c2.5-1.4 5-1.4 7-0.8v-11.2z" />
+          </svg>
+          現在の重点
+        </div>
+        <div className="focus-title">TOEIC600→700レベル</div>
         <p className="focus-note">
           メール・会議・報告で頻出のビジネス語彙を10問×1セッションで定着。
           単語を「思い出す」から「すぐ分かる」へ。

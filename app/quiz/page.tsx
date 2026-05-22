@@ -32,6 +32,7 @@ export default function QuizPage() {
   const [elapsedSec, setElapsedSec] = useState<number | null>(null);
   const recordsRef = useRef<AnswerRecord[]>([]);
   const questionStartRef = useRef<number | null>(null);
+  const elapsedTimesRef = useRef<number[]>([]);
 
   const current = questions[index];
 
@@ -46,7 +47,9 @@ export default function QuizPage() {
   async function handleSelect(choiceIdx: number) {
     if (phase !== "answering") return;
     if (questionStartRef.current !== null) {
-      setElapsedSec((performance.now() - questionStartRef.current) / 1000);
+      const sec = (performance.now() - questionStartRef.current) / 1000;
+      setElapsedSec(sec);
+      elapsedTimesRef.current.push(sec);
     }
     setSelectedIndex(choiceIdx);
     setPhase("feedback");
@@ -168,6 +171,10 @@ export default function QuizPage() {
           }))
         )
       );
+      sessionStorage.setItem(
+        "toeic700:elapsedTimes",
+        JSON.stringify(elapsedTimesRef.current)
+      );
     } catch {
       // ignore storage errors
     }
@@ -218,7 +225,10 @@ export default function QuizPage() {
               onClick={() => handleSelect(i)}
               disabled={phase !== "answering"}
             >
-              {choice}
+              <span className="choice-letter">
+                {String.fromCharCode(65 + i)}
+              </span>
+              <span className="choice-text">{choice}</span>
             </button>
           );
         })}
